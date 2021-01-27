@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Nature</title>
+		<link rel="stylesheet" href="">
+		<!-- botstrap css -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<!-- font  awesome-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+		<style type="text/css">
+			/* google fonts */
+		@import url('https://fonts.googleapis.com/css2?family=Acme&family=Josefin+Sans&display=swap');
+		*{
+			/* font-family: 'Acme', sans-serif; */
+			font-family: 'Josefin Sans', sans-serif;
+			scroll-behavior: smooth;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			outline: none!important;			
+		}
+		header{
+			position: relative;
+			z-index: 1000000;
+		}
+		p{
+			font-size: 1.15rem;
+		}
+		.navbar{
+			background: transparent!important;
+			transition: .5s;
+		}
+		.navbar.scrolled{
+			background: #2A2F32!important;
+			transition: .5s;
+		}
+		.navbar-light .navbar-nav .active>.nav-link,
+		.navbar-light .navbar-nav .nav-link.active,
+		.navbar-light .navbar-nav .nav-link.show,
+		.navbar-light .navbar-nav .show>.nav-link
+		{
+    		color: #000;
+    		background: #fff;
+		}
+		.navbar-light .navbar-nav .nav-link {
+ 		   color: rgba(255,255,255,.8);
+		}
+		.navbar-light .navbar-nav .nav-link:hover,
+		.navbar-light .navbar-nav .nav-link:focus
+		{
+			color: rgba(255, 255, 255, 1);
+		}
+		.navbar-light .navbar-brand,
+		.navbar-light .navbar-brand:hover,
+		.navbar-light .navbar-brand:focus,
+		.navbar-light .navbar-brand:visited
+		{
+			color: rgba(255,255,255,1);
+			font-size: 2.3rem;
+			font-weight: 600;
+		}
+		.banner{
+			position: relative;
+			top: 0;
+			width: 100%;
+			height: 100vh;
+			background: url('img/img11.jpg');
+			background-size: cover;
+			margin-bottom: 0;
+
+		}
+		.banner::before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 400px;
+			background: linear-gradient(#000,transparent);
+			pointer-events: none;
+		}
+		.banner::after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 400px;
+			background: linear-gradient(360deg,#000,transparent);
+			pointer-events: none;
+		}
+		.height100p{
+			height: 100vh;
+		}
+		.h100{
+			height: 100%;
+		}
+		.contentBox{
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			/* color: #fff; */
+			z-index: 10;
+		}
+		.contentBox h1{
+			font-weight: 800;
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 5rem;
+		}
+		.contentBox p{
+			color:#fff;
+			font-size: 1.3rem;
+		}
+
+		.sec1{
+			padding: 100px 0;
+			background: #000;
+		}
+		.sec1 .headertext h2{
+			font-size: 2.5rem;
+		}
+		</style>
+
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+				<div class="container">
+					<a class="navbar-brand font-weight-bold" href="#">NAT<span style="color: green;">URE</span></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-lg-auto">
+							<li class="nav-item active">
+								<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#explore">Explore</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#adventure">Adventure</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#blog">Blog</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#contact">Contact</a>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<div class="jumbotron jumbotron-fluid height100p banner" id="home">
+			<div class="container h100">
+				<div class="contentBox h100">
+					<div>
+						<h1>Undiscovered Beauty</h1>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<section class="sec1" id="explore">
+			<div class="container">
+				<div class="row">
+					<div class="offset-sm-2 col-sm-8">
+						<div class="headertext text-center">
+							<h2>Explore The World</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="placebox">
+							<div class="imgbox">
+								<img src="img/img103.jpg" class="img-fluid">
+							</div>
+							<div>
+								<h3>Place Name<br><span>Country Name</span></h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="placebox">
+							<div class="imgbox">
+								<img src="img/img102.jpg" class="img-fluid">
+							</div>
+							<div>
+								<h3>Place Name<br><span>Country Name</span></h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="placebox">
+							<div class="imgbox">
+								<img src="img/img105.jpg" class="img-fluid">
+							</div>
+							<div>
+								<h3>Place Name<br><span>Country Name</span></h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="sec2" id="adventure">
+			<div class="container h100">
+				<div class="contentBox h100">
+					<div>
+						<h1>Adventure is Everywhere</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh.</p>
+						<a href="" class="btn btnd1">Read More</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="sec3" id="blog">
+			<div class="container">
+				 <div class="row">
+				 	<div class="offset-sm-2 col-sm-8 ">
+				 		<div class="headertext text-center">
+				 			<h2>Our Latest Post</h2>
+				 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh.</p>
+				 		</div>
+				 	</div>
+				 </div>
+				 <div class="row">
+				 	<div class="col-sm-6">
+				 		<div class="blogpost">
+				 			<div class="imgbox">
+				 				<img src="img/img200.jpg" class="img-fluid">
+				 			</div>
+				 			<div class="content">
+				 				<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+				 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh....</p>
+				 			</div>
+				 		</div>
+				 	</div>
+
+				 	<div class="col-sm-6">
+				 		<div class="blogpost">
+				 			<div class="imgbox">
+				 				<img src="img/img201.jpg" class="img-fluid">
+				 			</div>
+				 			<div class="content">
+				 				<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+				 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh....</p>
+				 			</div>
+				 		</div>
+				 	</div>
+
+				 	<div class="col-sm-6">
+				 		<div class="blogpost">
+				 			<div class="imgbox">
+				 				<img src="img/img202.jpg" class="img-fluid">
+				 			</div>
+				 			<div class="content">
+				 				<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+				 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh....</p>
+				 			</div>
+				 		</div>
+				 	</div>
+
+				 	<div class="col-sm-6">
+				 		<div class="blogpost">
+				 			<div class="imgbox">
+				 				<img src="img/img203.jpg" class="img-fluid">
+				 			</div>
+				 			<div class="content">
+				 				<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+				 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh....</p>
+				 			</div>
+				 		</div>
+				 	</div>
+
+				 </div>
+			</div>
+		</section>
+
+		<section class="contact" id="contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="headertext text-center">
+						<h2>Contact Us</h2>
+						<p>Lorem ipsum dolar sit amet, consection adipiciing elit</p>
+						</div>
+					</div>
+				</div>
+				<div class="row clearfix">
+					<div class="offset-sm-2 col-sm-8">
+						<!-- <div class="form-group"> -->
+							<form action="" method="">
+								<div class="form-group">
+									<label>Name</label>
+									<input type="text" name="" value="" placeholder="" class="form-control" required="">
+								</div>
+								<div class="form-group">
+									<label>Email</label>
+									<input type="text" name="" value="" placeholder="" class="form-control" required="">
+								</div>
+								<div class="form-group">
+									<label>Phno</label>
+									<input type="text" name="" value="" placeholder="" class="form-control" required="">
+								</div>
+
+								<div class="form-group">
+									<label>Message</label>
+									<textarea class="textarea form-control" name=""></textarea>
+								</div>
+								<div class="form-group">
+									<button class="btn btnd1">Send</button>
+								</div>
+							</form>
+						<!-- </div> -->
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer class="container"> 
+			<div class="row">
+				<div class="col-sm-12">
+					<ul class="sci">
+						<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+					</ul>
+					<p class="cpyrt"> &#169; Copyright 2021 Nature | Template by <a href="#">-AB-</a> </p>
+				</div>
+			</div>
+		</footer>
+		<!-- &copy; -->
+
+
+
+
+
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+		<script type="text/javascript">
+			$(document).scroll(function(){
+				$('.navbar').toggleClass('scrolled', $(this).scrollTop() > $('.navbar').height());
+			});
+		</script>
+	</body>
+</html>
