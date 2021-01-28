@@ -10,7 +10,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<!-- font  awesome-->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
+		<!-- AOS -->
+		 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 		<style type="text/css">
 			/* google fonts */
 		@import url('https://fonts.googleapis.com/css2?family=Acme&family=Josefin+Sans&display=swap');
@@ -21,7 +22,7 @@
 			margin: 0;
 			padding: 0;
 			box-sizing: border-box;
-			outline: none!important;			
+			outline: none!important;
 		}
 		header{
 			position: relative;
@@ -35,7 +36,7 @@
 			transition: .5s;
 		}
 		.navbar.scrolled{
-			background: #2A2F32!important;
+			background: #000!important;
 			transition: .5s;
 		}
 		.navbar-light .navbar-nav .active>.nav-link,
@@ -43,11 +44,14 @@
 		.navbar-light .navbar-nav .nav-link.show,
 		.navbar-light .navbar-nav .show>.nav-link
 		{
-    		color: #000;
-    		background: #fff;
+			color: #000;
+			background: #fff;
+		}
+		.navbar-light .navbar-nav .active>.nav-link:hover{
+			color: #000;
 		}
 		.navbar-light .navbar-nav .nav-link {
- 		   color: rgba(255,255,255,.8);
+			color: rgba(255,255,255,.8);
 		}
 		.navbar-light .navbar-nav .nav-link:hover,
 		.navbar-light .navbar-nav .nav-link:focus
@@ -71,9 +75,10 @@
 			background: url('img/img11.jpg');
 			background-size: cover;
 			margin-bottom: 0;
-
 		}
-		.banner::before{
+		.banner::before,
+		.sec2::before,
+		.contact::before{
 			content: '';
 			position: absolute;
 			top: 0;
@@ -83,7 +88,9 @@
 			background: linear-gradient(#000,transparent);
 			pointer-events: none;
 		}
-		.banner::after{
+		.banner::after,
+		.sec2::after,
+		.contact::after{
 			content: '';
 			position: absolute;
 			bottom: 0;
@@ -113,23 +120,312 @@
 			color: #fff;
 			text-transform: uppercase;
 			font-size: 5rem;
+			margin-top: 30px
 		}
 		.contentBox p{
 			color:#fff;
 			font-size: 1.3rem;
 		}
-
 		.sec1{
 			padding: 100px 0;
 			background: #000;
 		}
-		.sec1 .headertext h2{
+		.headertext h2{
 			font-size: 2.5rem;
+			margin-bottom: 20px;
 		}
-		</style>
+		.headertext{
+			color: #fff;
+		}
+		.placebox{
+			position: relative;
+			max-width: 300px;
+			height: 400px;
+			margin: 0 auto;
+			background: #000;
+			margin-top: 30px;
+		}
+		.placebox .imgbox{
+			width: 100%;
+			height: 100%;
+		}
+		.placebox .imgbox img{
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+		.placebox .content{
+			position: absolute;
+			top: 0;
+			left: 0;
+			/* z-index: 10000; */
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: baseline;
+			align-items: flex-end;
+		}
+		.placebox .content h3{
+			position: relative;
+			margin: 0;
+			padding: 10px;
+			background: rgba(0, 0, 0, .9);
+			width: 100%;
+			color: #fff;
+			font-size: 20px;
+			text-align: center;
+			font-weight: 600;
+		}
+		.placebox .content h3 span{
+			font-size: 16px;
+			font-weight: 500;
+		}
+		.sec2 {
+			position: relative;
+			background: url('img/img14.jpg');
+			background-size: cover;
+			/* width: 100%; */
+			height: 100vh;
+		}
+		.sec2 h2{
+			font-weight: 800;
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 4.5rem;
+		}
+		.sec2 .btnd1{
+			border: 2px solid #fff;
+			color: #000;
+			background: #fff;
+			border-radius: 50px;
+			padding: 10px 40px;
+			font-size: 1.15rem;
+			outline: none;
+			font-weight: 500;
+			margin-top: 20px;
+			transition: .3s;
+		}
+		.sec2 .btnd1:hover{
+			letter-spacing: 2px;
+			color: #000;
+			font-weight: 700;
+		}
+		.sec3{
+			position: relative;
+			padding: 100px 0;
+			background: #000;
+		}
+		.blogpost{
+			position: relative;
+			width: 100%;
+			margin-top: 30px;
+			background: #fff;
+		}
+		.blogpost .imgbox{
+			height: 400px;
+		}
+		.blogpost .imgbox img{
+			width: 100%;
+			height: 100%;
+				object-fit: cover;
+		}
+		.blogpost .content{
+			padding: 15px;
+		}
+		.blogpost .content h1{
+			margin: 0;
+			padding: 0 0 10px;
+			font-weight: 600;
+			font-size: 1.5rem;
+		}
+		.blogpost .btnd2{
+			background: #262626;
+			color: #fff;
+			border-radius: 30px;
+			padding: 10px 20px;
+			transition: .3s;
+			float: right
+		}
+		.blogpost .btnd2:hover{
+			transform: translateY(-7px);
+		}
 
+		.contact{
+			position: relative;
+			padding: 100px 0;
+			background: url('img/img9.jpg');
+			background-size: cover;
+			min-height: 100vh;
+		}
+		.contact .btnd1{
+			border: 2px solid #fff;
+			color: #000;
+			background: #fff;
+			border-radius: 50px;
+			padding: 10px 40px;
+			font-size: 1.15rem;
+			outline: none;
+			font-weight: 700;
+			margin-top: 20px;
+			transition: .3s;
+		}
+		.contact .btnd1:hover{
+			transform: translateY(-5px);
+		}
+		.contact form{
+			position: relative;
+			z-index: 1000;
+		}
+		.contact label{
+			color: #fff;
+			font-size: 1.25rem;
+		}
+		.contact .form-control{
+			background: transparent;
+			border: none;
+			border-bottom: 2px solid rgba(255, 255, 255, .3);
+			height: 50px;
+			border-radius: 0;
+			background: rgba(0, 0, 0, .6);
+			color: #fff;
+			font-size: 1.15rem;
+			transition: .5s;
+		}
+		.contact .form-control:focus,
+		.contact .form-control:hover
+		{
+			border: none;
+			border-bottom: 2px solid rgba(255, 255, 255, 1);
+			box-shadow: none;
+		}
+		.contact .textarea{
+			min-height: 100px;
+			resize: none;
+		}
+		footer{
+			background: #000;
+			padding: 50px 0 0;
+		}
+		.sci{
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.sci li{
+			list-style: none;
+			margin: 0 20px;
+		}
+		.sci li a{
+
+			color: #777;
+			font-size: 2em;
+			transition: .3s;
+			text-decoration: none;
+		}
+		.sci li a:hover{
+			color: #fff;
+		}
+		.cpyrt{
+			margin-top: 20px;
+			text-align: center;
+			color: #777;
+		}
+		.cpyrt a{
+			text-decoration: none;
+			color: #fff;
+		}
+
+		@media (min-width: 992px){
+			.navbar-expand-lgt .navbar-nav .nav-link{
+				padding-right: 1rem;
+				padding-left: 1rem;
+			}
+		}
+		@media (max-width: 992px){
+			p,
+			.contentBox p{
+				font-size: 1.1rem;
+			}
+			.navbar-light .navbar-toggler{
+				background: #fff;
+				border-radius: 0;
+			}
+			.banner{
+				min-height: 100vh;
+				padding: 100px 0;
+			}
+			.contentBox h1,
+			.sec2 h2{
+				font-size: 2rem;
+			}
+			.navbar-expand-lg .navbar-nav .nav-link{
+				padding-right: 1rem;
+				padding-left: 1rem;
+			}
+			.navbar-light .navbar-brand,
+			.navbar-light .navbar-brand:hover,
+			.navbar-light .navbar-brand:focus,
+			.navbar-light .navbar-brand:visited
+			{
+				font-size: 2rem;
+			}
+			.sec1{
+				padding: 20px 0;
+			}
+			.headertext h2{
+				font-size: 2rem;
+			}
+			.placebox{				
+				max-width: 280px;
+				height: 380px;				
+			}
+			.sec2{
+				height: auto;
+				padding: 40px 0;
+			}
+			.sec3{
+				padding: 20px 0;
+			}
+			.blogpost .imgbox{
+			    height: 250px;
+			}
+			.blogpost .btnd2{
+				
+				padding: 8px 20px;
+				
+			}
+			.contact{
+				padding: 40px 0;
+			}
+			.contact .form-control{
+				height: 40px;
+				border: 1px solid #fff;
+			}
+			.sec2 .btnd1{
+				padding: 8px 30px;
+			}
+			.contact .btnd1{
+				padding: 5px 30px;
+				margin-top: 20px
+			}
+			footer{
+				padding: 0 0 20px;
+			}
+			.sci li{
+				list-style: none;
+				margin: 0 10px;
+			}
+			.sci li a{
+				font-size: 1.5em;
+			}
+		}
+
+
+		</style>
 	</head>
-	<body>
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">
 		<header>
 			<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 				<div class="container">
@@ -139,7 +435,7 @@
 					</button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-lg-auto">
-							<li class="nav-item active">
+							<li class="nav-item">
 								<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
 							</li>
 							<li class="nav-item">
@@ -160,57 +456,54 @@
 				</div>
 			</nav>
 		</header>
-
 		<div class="jumbotron jumbotron-fluid height100p banner" id="home">
 			<div class="container h100">
 				<div class="contentBox h100">
 					<div>
-						<h1>Undiscovered Beauty</h1>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+						<!-- data-aos-offset="200" -->
+						<h1 data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="0">Undiscovered Beauty</h1>
+						<p data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="500">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
 					</div>
 				</div>
 			</div>
 		</div>
-
 		<section class="sec1" id="explore">
 			<div class="container">
 				<div class="row">
 					<div class="offset-sm-2 col-sm-8">
 						<div class="headertext text-center">
-							<h2>Explore The World</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh.</p>
+							<h2 data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="0">Explore The World</h2>
+							<p data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh.</p>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-sm-4">
-						<div class="placebox">
+						<div class="placebox" data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="0">
 							<div class="imgbox">
 								<img src="img/img103.jpg" class="img-fluid">
 							</div>
-							<div>
+							<div class="content">
 								<h3>Place Name<br><span>Country Name</span></h3>
 							</div>
 						</div>
 					</div>
-
 					<div class="col-sm-4">
-						<div class="placebox">
+						<div class="placebox" data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="500">
 							<div class="imgbox">
 								<img src="img/img102.jpg" class="img-fluid">
 							</div>
-							<div>
+							<div class="content">
 								<h3>Place Name<br><span>Country Name</span></h3>
 							</div>
 						</div>
 					</div>
-
 					<div class="col-sm-4">
-						<div class="placebox">
+						<div class="placebox" data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="1000">
 							<div class="imgbox">
 								<img src="img/img105.jpg" class="img-fluid">
 							</div>
-							<div>
+							<div class="content">
 								<h3>Place Name<br><span>Country Name</span></h3>
 							</div>
 						</div>
@@ -223,74 +516,78 @@
 			<div class="container h100">
 				<div class="contentBox h100">
 					<div>
-						<h1>Adventure is Everywhere</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh.</p>
-						<a href="" class="btn btnd1">Read More</a>
+						<h2 data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="0">Adventure is Everywhere</h2>
+						<p data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh.</p>
+						<a href="" class="btn btnd1" data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="800">Read More</a>
 					</div>
 				</div>
 			</div>
 		</section>
-
 		<section class="sec3" id="blog">
 			<div class="container">
-				 <div class="row">
-				 	<div class="offset-sm-2 col-sm-8 ">
-				 		<div class="headertext text-center">
-				 			<h2>Our Latest Post</h2>
-				 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh.</p>
-				 		</div>
-				 	</div>
-				 </div>
-				 <div class="row">
-				 	<div class="col-sm-6">
-				 		<div class="blogpost">
-				 			<div class="imgbox">
-				 				<img src="img/img200.jpg" class="img-fluid">
-				 			</div>
-				 			<div class="content">
-				 				<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
-				 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh....</p>
-				 			</div>
-				 		</div>
-				 	</div>
-
-				 	<div class="col-sm-6">
-				 		<div class="blogpost">
-				 			<div class="imgbox">
-				 				<img src="img/img201.jpg" class="img-fluid">
-				 			</div>
-				 			<div class="content">
-				 				<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
-				 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh....</p>
-				 			</div>
-				 		</div>
-				 	</div>
-
-				 	<div class="col-sm-6">
-				 		<div class="blogpost">
-				 			<div class="imgbox">
-				 				<img src="img/img202.jpg" class="img-fluid">
-				 			</div>
-				 			<div class="content">
-				 				<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
-				 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh....</p>
-				 			</div>
-				 		</div>
-				 	</div>
-
-				 	<div class="col-sm-6">
-				 		<div class="blogpost">
-				 			<div class="imgbox">
-				 				<img src="img/img203.jpg" class="img-fluid">
-				 			</div>
-				 			<div class="content">
-				 				<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
-				 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh....</p>
-				 			</div>
-				 		</div>
-				 	</div>
-
-				 </div>
+				<div class="row">
+					<div class="offset-sm-2 col-sm-8 ">
+						<div class="headertext text-center">
+							<h2 data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="0">Our Latest Post</h2>
+							<p data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh.</p>
+							
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="blogpost" data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="0">
+							<div class="imgbox">
+								<img src="img/img200.jpg" class="img-fluid">
+							</div>
+							<div class="content">
+								<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh....</p>
+								<a href="#" class="btn btnd2">Read More</a>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="blogpost" data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="500">
+							<div class="imgbox">
+								<img src="img/img201.jpg" class="img-fluid">
+							</div>
+							<div class="content">
+								<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh....</p>
+								<a href="#" class="btn btnd2">Read More</a>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="blogpost" data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="0">
+							<div class="imgbox">
+								<img src="img/img202.jpg" class="img-fluid">
+							</div>
+							<div class="content">
+								<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh....</p>
+								<a href="#" class="btn btnd2">Read More</a>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="blogpost" data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="500">
+							<div class="imgbox">
+								<img src="img/img203.jpg" class="img-fluid">
+							</div>
+							<div class="content">
+								<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat nisl ut dictum hendrerit.varius natoque penatibus et magnis dis parturient montes, ridiculus mus. Phasellus tempor leo ac dui pretium, id molestie risus malesuada. Nunc quis finibus magna, eu condimentum nibh....</p>
+								<a href="#" class="btn btnd2">Read More</a>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -299,44 +596,43 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="headertext text-center">
-						<h2>Contact Us</h2>
-						<p>Lorem ipsum dolar sit amet, consection adipiciing elit</p>
+							<h2 data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="0">Contact Us</h2>
+							<p data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="500">Lorem ipsum dolar sit amet, consection adipiciing elit</p>
 						</div>
 					</div>
 				</div>
 				<div class="row clearfix">
 					<div class="offset-sm-2 col-sm-8">
 						<!-- <div class="form-group"> -->
-							<form action="" method="">
-								<div class="form-group">
-									<label>Name</label>
-									<input type="text" name="" value="" placeholder="" class="form-control" required="">
-								</div>
-								<div class="form-group">
-									<label>Email</label>
-									<input type="text" name="" value="" placeholder="" class="form-control" required="">
-								</div>
-								<div class="form-group">
-									<label>Phno</label>
-									<input type="text" name="" value="" placeholder="" class="form-control" required="">
-								</div>
-
-								<div class="form-group">
-									<label>Message</label>
-									<textarea class="textarea form-control" name=""></textarea>
-								</div>
-								<div class="form-group">
-									<button class="btn btnd1">Send</button>
-								</div>
-							</form>
+						<form action="" method="" data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="0">
+							<div class="form-group">
+								<label>Name</label>
+								<input type="text" name="" value="" placeholder="" class="form-control" required="">
+							</div>
+							<div class="form-group">
+								<label>Email</label>
+								<input type="text" name="" value="" placeholder="" class="form-control" required="">
+							</div>
+							<div class="form-group">
+								<label>Phno</label>
+								<input type="text" name="" value="" placeholder="" class="form-control" required="">
+							</div>
+							<div class="form-group">
+								<label>Message</label>
+								<textarea class="textarea form-control" name=""></textarea>
+							</div>
+							<div class="form-group text-center">
+								<button class="btn btnd1">Send</button>
+							</div>
+						</form>
 						<!-- </div> -->
 					</div>
 				</div>
 			</div>
 		</section>
-
-		<footer class="container"> 
-			<div class="row">
+		<footer>
+			<div class="container">
+				<div class="row">
 				<div class="col-sm-12">
 					<ul class="sci">
 						<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -345,26 +641,25 @@
 						<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 						<li><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a></li>
 					</ul>
-					<p class="cpyrt"> &#169; Copyright 2021 Nature | Template by <a href="#">-AB-</a> </p>
+					<p class="cpyrt"> &#169; Copyright 2021 Nature | Template by <a href="https://anshumanbharatiyaa.tk">-AB-</a></p>
 				</div>
 			</div>
+			</div>
+			
 		</footer>
 		<!-- &copy; -->
-
-
-
-
-
-
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script>
+		   AOS.init();
+		</script>
 		<script type="text/javascript">
 			$(document).scroll(function(){
 				$('.navbar').toggleClass('scrolled', $(this).scrollTop() > $('.navbar').height());
 			});
 		</script>
+		
 	</body>
 </html>
